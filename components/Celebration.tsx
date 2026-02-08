@@ -12,13 +12,13 @@ const Celebration: React.FC<{ name: string }> = ({ name }) => {
            <div className="absolute inset-0 bg-red-100 rounded-full blur-3xl opacity-20 -z-10 animate-pulse"></div>
            {/* We use the uploaded image from the prompt. 
                In this context, we'll represent it as a beautiful image element. */}
-           <img 
-             src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1000&auto=format&fit=crop" 
+           <img
+             src="/1.jpeg"
              alt="Romantic Couple"
              className="w-full h-full object-cover rounded-full border-8 border-white shadow-2xl"
              onError={(e) => {
-               // Fallback if the external link fails, though the prompt image is what we really want.
-               (e.target as HTMLImageElement).src = "https://img.freepik.com/free-vector/romantic-couple-illustration_23-2148417646.jpg";
+               // If user hasn't uploaded 1.jpeg yet, fall back to the SVG placeholder we added.
+               (e.target as HTMLImageElement).src = "/1.svg";
              }}
            />
            {/* User's provided image placeholder logic: 
