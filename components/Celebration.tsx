@@ -13,12 +13,12 @@ const Celebration: React.FC<{ name: string }> = ({ name }) => {
            {/* We use the uploaded image from the prompt. 
                In this context, we'll represent it as a beautiful image element. */}
            <img
-             src="/1.jpeg"
+             src="./1.jpeg"
              alt="Romantic Couple"
              className="w-full h-full object-cover rounded-full border-8 border-white shadow-2xl"
              onError={(e) => {
                // If user hasn't uploaded 1.jpeg yet, fall back to the SVG placeholder we added.
-               (e.target as HTMLImageElement).src = "/1.svg";
+               (e.target as HTMLImageElement).src = "./1.svg";
              }}
            />
            {/* User's provided image placeholder logic: 
